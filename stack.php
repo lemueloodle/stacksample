@@ -3,7 +3,6 @@ try{
 	$status = $_POST['sample'];
 
 	$pdo = new PDO('mysql:host='.$host.';dbname='.$dbname.'',$username, $password);
-	$pdo = new PDO('mysql:hpst='.$hjost.';dbname='.$dbname.'',$username,$password);
 	
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$fetch = $pdo->prepare("SELECT * from dbname where dbtable = :status");
@@ -167,3 +166,49 @@ function mgalboomegx(){
             }
         });
 }
+
+class book{
+  private $db;
+
+  function __construct($conn){
+    $this->db = $con;
+  }
+
+  public function newBook($name_book, $price, $stock){
+    $dat
+  }
+
+  
+}
+
+$book = new book($conn);
+
+$new = $book->newBook();
+
+
+//HTACCESS
+RewriteEngine On 
+
+# For linking API for search box
+RewriteRule ^search/([\[\]=,\s\%20\;\:\?&@~\{\}\+'\.*!™`A-Za-z0-9_-]+)/([\[\]=,\s\%20\?&@~\{\}\+'\.*!™`A-Za-z0-9_-]+)/([\[\]=,\?&@~\{\}\+'\.*!™`A-Za-z0-9_-]+)$ php/__publicsuggestget.php?t=$1&c=$2&tk=$3
+
+# For linking Home page pagination
+RewriteRule ^searchinitxx$ php/__publicpaging.php
+
+# For linking Home page search result
+RewriteRule ^searchinitxxx$ php/__publicget.php
+
+# For linking Home page fetch info
+RewriteRule ^pfetchinfo$ php/__publicitemgetinfo.php
+
+# For linking Home page Get Overdue Notification
+RewriteRule ^goverdue$ php/__getoverduenotification.php
+
+# For linking Sign-In Page
+RewriteRule ^admin$ php/__signin.php
+
+# For linking Entry Log Page
+RewriteRule ^entrylog/([\[\]=,\?&@~\{\}\+'\.*!™`A-Za-z0-9_-]+)$ php/__entrylog.php?toky=$1
+
+# For linking Register Account Page
+RewriteRule ^register/([\[\]=,\?&@~\{\}\+'\.*!™`A-Za-z0-9_-]+)/([\[\]=,\?&@~\{\}\+'\.*!™`A-Za-z0-9_-]+)$ php/__user_register.php?toky=$1&pass=$2
